@@ -1,4 +1,4 @@
-@extends('meettheteam::layouts.master')
+@extends('nova-meettheteam::layouts.master')
 
 @section('content')
     <h1 class="text-7xl mb-10">Meet the team</h1>
