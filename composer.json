@@ -1,0 +1,29 @@
+{
+    "name": "creode/laravel-nova-meet-the-team",
+    "description": "Add Meet the Team feature to your Laravel Nova application.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Creode\\LaravelNovaMeetTheTeam\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Creode\\LaravelNovaMeetTheTeam\\LaravelNovaMeetTheTeamServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
