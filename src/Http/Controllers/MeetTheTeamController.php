@@ -1,6 +1,6 @@
 <?php
 
-namespace Creode\LaraveNovaMeetTheTeam\Http\Controllers;
+namespace Creode\LaravelNovaMeetTheTeam\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Routing\Controller;
