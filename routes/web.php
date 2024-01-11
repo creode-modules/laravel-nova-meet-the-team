@@ -11,7 +11,7 @@
 |
 */
 
-use Creode\LaraveNovaMeetTheTeam\Http\Controllers\MeetTheTeamController;
+use Creode\LaravelNovaMeetTheTeam\Http\Controllers\MeetTheTeamController;
 
 Route::prefix('meet-the-team')->group(function () {
     Route::get('/', [MeetTheTeamController::class, 'index']);
