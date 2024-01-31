@@ -2,28 +2,26 @@
 
 namespace Creode\LaravelNovaMeetTheTeam\Nova;
 
-use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource;
 
-class TeamMembers extends Resource
+class Team extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var class-string<\App\Models\User>
      */
-    public static $model = \Creode\LaravelNovaMeetTheTeam\Entities\TeamMember::class;
+    public static $model = \Creode\LaravelNovaMeetTheTeam\Entities\Team::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'Name';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -31,7 +29,7 @@ class TeamMembers extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name',
+        'id', 'title',
     ];
 
     public static $group = 'OurPeople';
@@ -46,13 +44,10 @@ class TeamMembers extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Name')
+            Text::make('Title')
                 ->sortable()
-                ->rules('required', 'max:255'),
-            Text::make('Job Title'),
-            Image::make('Image'),
-            BelongsTo::make('Team', 'team', Teams::class)
-            ->showCreateRelationButton(),
+                ->rules('required', 'max:255')
+                ->translatable(),
         ];
     }
 
