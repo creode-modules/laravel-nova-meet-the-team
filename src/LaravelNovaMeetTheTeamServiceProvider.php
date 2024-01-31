@@ -30,6 +30,7 @@ class LaravelNovaMeetTheTeamServiceProvider extends PackageServiceProvider
             ->name('laravel-nova-meet-the-team')
             ->hasViews()
             ->hasRoutes('web')
+            ->hasConfigFile()
             ->hasMigrations(
                 [
                     '2023_08_14_150130_create_teams_table',
