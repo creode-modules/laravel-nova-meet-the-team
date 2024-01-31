@@ -4,10 +4,13 @@ namespace Creode\LaravelNovaMeetTheTeam\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Routing\Controller;
-use Creode\LaravelNovaMeetTheTeam\Entities\Team;
+use Creode\LaravelNovaMeetTheTeam\Repositories\TeamRepository;
 
 class MeetTheTeamController extends Controller
 {
+    public function __construct(protected TeamRepository $teamRepository)
+    {
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +18,7 @@ class MeetTheTeamController extends Controller
      */
     public function index()
     {
-        $teams = Team::with('members')->get();
+        $teams = $this->teamRepository->with('members')->get();
         return view('nova-meet-the-team::index', compact('teams'));
     }
 }

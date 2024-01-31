@@ -53,7 +53,7 @@ class TeamMember extends Resource
             Text::make('Job Title'),
             Image::make('Image'),
             BelongsTo::make('Team', 'team', TeamResource::class)
-            ->showCreateRelationButton(),
+                ->showCreateRelationButton(),
         ];
     }
 

@@ -6,8 +6,18 @@
         "nova"
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
     "require": {
-        "php": "^7.3|^8.0"
+        "php": "^7.3|^8.0",
+        "creode/laravel-repository": "^1.0",
+        "illuminate/contracts": "^10.0",
+        "laravel/nova": "^4.32",
+        "spatie/laravel-package-tools": "^1.16"
     },
     "autoload": {
         "psr-4": {
@@ -25,5 +35,9 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require-dev": {
+        "orchestra/canvas": "^8.11",
+        "orchestra/testbench": "^8.8"
+    }
 }

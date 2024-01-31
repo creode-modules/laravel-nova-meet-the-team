@@ -6,10 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class TeamMember extends Model
 {
+    protected $table = 'team_members';
+
     protected $fillable = [];
 
     public function team()
     {
-        return $this->belongsTo(\Creode\LaravelNovaMeetTheTeam\Entities\Team::class);
+        return $this->belongsTo(config('nova-meet-the-team.team_model', Team::class), 'team_id');
     }
 }
