@@ -29,7 +29,6 @@ class LaravelNovaMeetTheTeamServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-nova-meet-the-team')
             ->hasViews()
-            ->hasRoutes('web')
             ->hasConfigFile()
             ->hasMigrations(
                 [
