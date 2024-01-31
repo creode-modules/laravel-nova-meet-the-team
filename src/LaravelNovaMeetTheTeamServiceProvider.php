@@ -19,8 +19,8 @@ class LaravelNovaMeetTheTeamServiceProvider extends PackageServiceProvider
     protected function registerResources(): void
     {
         Nova::resources([
-            \Creode\LaravelNovaMeetTheTeam\Nova\TeamMembers::class,
-            \Creode\LaravelNovaMeetTheTeam\Nova\Teams::class,
+            \Creode\LaravelNovaMeetTheTeam\Nova\TeamMember::class,
+            \Creode\LaravelNovaMeetTheTeam\Nova\Team::class,
         ]);
     }
 
