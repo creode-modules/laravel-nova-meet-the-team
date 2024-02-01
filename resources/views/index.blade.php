@@ -11,7 +11,7 @@
                 @foreach($team->members as $teamMember)
                     <article>
                         @if ($teamMember->image)
-                            <img src="{{ asset('storage').'/'.$teamMember->image }}" alt="">
+                            <img src="{{ $teamMember->imageUrl }}" alt="{{ $teamMember->name }}">
                         @endif
 
                         <h4 class="text-2xl font-bold mt-4">{{ $teamMember->name }}</h4>

@@ -51,7 +51,7 @@ class TeamMember extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
             Text::make('Job Title'),
-            Image::make('Image'),
+            Image::make('Image', 'image', config('nova-meet-the-team.image_disk', 'public')),
             BelongsTo::make('Team', 'team', TeamResource::class)
                 ->showCreateRelationButton(),
         ];

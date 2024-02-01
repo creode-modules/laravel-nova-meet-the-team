@@ -23,4 +23,13 @@ return [
     */
 
     'team_member_model' => \Creode\LaravelNovaMeetTheTeam\Entities\TeamMember::class,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Image Disk
+    |--------------------------------------------------------------------------
+    |
+    | The disk on which to store team images on.
+    */
+    'image_disk' => 'public',
 ];
