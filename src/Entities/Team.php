@@ -3,11 +3,12 @@
 namespace Creode\LaravelNovaMeetTheTeam\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use PawelMysior\Publishable\Publishable;
 use Spatie\Translatable\HasTranslations;
 
 class Team extends Model
 {
-    use HasTranslations;
+    use HasTranslations, Publishable;
 
     protected $table = 'teams';
 
