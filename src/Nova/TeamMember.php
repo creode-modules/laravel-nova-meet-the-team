@@ -2,14 +2,16 @@
 
 namespace Creode\LaravelNovaMeetTheTeam\Nova;
 
-use Creode\LaravelNovaMeetTheTeam\Nova\Team as TeamResource;
-use Creode\NovaPublishable\Published;
-use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource;
+use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\BelongsTo;
+use Creode\NovaPublishable\Published;
+use Laravel\Nova\Http\Requests\NovaRequest;
+use Creode\NovaPublishable\Nova\PublishAction;
+use Creode\NovaPublishable\Nova\UnpublishAction;
+use Creode\LaravelNovaMeetTheTeam\Nova\Team as TeamResource;
 
 class TeamMember extends Resource
 {
@@ -100,6 +102,16 @@ class TeamMember extends Resource
      */
     public function actions(NovaRequest $request)
     {
-        return [];
+        return [
+            (new PublishAction)
+                ->confirmText('Are you sure you want to publish these items?')
+                ->confirmButtonText('Publish')
+                ->cancelButtonText("Don't Publish"),
+
+            (new UnpublishAction)
+                ->confirmText('Are you sure you want to unpublish these items?')
+                ->confirmButtonText('Unpublish')
+                ->cancelButtonText("Don't Unpublish")
+        ];
     }
 }
