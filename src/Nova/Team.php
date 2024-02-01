@@ -2,10 +2,11 @@
 
 namespace Creode\LaravelNovaMeetTheTeam\Nova;
 
+use Laravel\Nova\Resource;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Creode\NovaPublishable\Published;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Resource;
 
 class Team extends Resource
 {
@@ -44,6 +45,7 @@ class Team extends Resource
     {
         return [
             ID::make()->sortable(),
+            Published::make('Published', 'published_at'),
             Text::make('Title')
                 ->sortable()
                 ->rules('required', 'max:255')

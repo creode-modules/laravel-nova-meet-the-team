@@ -17,7 +17,8 @@
         "creode/laravel-repository": "^1.0",
         "illuminate/contracts": "^10.0",
         "laravel/nova": "^4.32",
-        "spatie/laravel-package-tools": "^1.16"
+        "spatie/laravel-package-tools": "^1.16",
+        "creode/nova-publishable": "^1.0"
     },
     "autoload": {
         "psr-4": {

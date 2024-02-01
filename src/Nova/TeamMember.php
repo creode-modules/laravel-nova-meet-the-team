@@ -3,6 +3,7 @@
 namespace Creode\LaravelNovaMeetTheTeam\Nova;
 
 use Creode\LaravelNovaMeetTheTeam\Nova\Team as TeamResource;
+use Creode\NovaPublishable\Published;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
@@ -47,6 +48,7 @@ class TeamMember extends Resource
     {
         return [
             ID::make()->sortable(),
+            Published::make('Published', 'published_at'),
             Text::make('Name')
                 ->sortable()
                 ->rules('required', 'max:255'),
