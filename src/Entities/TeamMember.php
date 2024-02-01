@@ -4,10 +4,13 @@ namespace Creode\LaravelNovaMeetTheTeam\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
+use PawelMysior\Publishable\Publishable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class TeamMember extends Model
 {
+	use Publishable;
+
     protected $table = 'team_members';
 
     protected $fillable = [];
