@@ -48,6 +48,7 @@ class TeamMember extends Resource
     {
         return [
             ID::make()->sortable(),
+            Published::make('Published', 'published_at'),
             Text::make('Name')
                 ->sortable()
                 ->rules('required', 'max:255'),
@@ -55,7 +56,6 @@ class TeamMember extends Resource
             Image::make('Image', 'image', config('nova-meet-the-team.image_disk', 'public')),
             BelongsTo::make('Team', 'team', TeamResource::class)
                 ->showCreateRelationButton(),
-            Published::make('Published', 'published_at')
         ];
     }
 
