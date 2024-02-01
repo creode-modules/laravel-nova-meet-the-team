@@ -7,6 +7,8 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Creode\NovaPublishable\Published;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Creode\NovaPublishable\Nova\PublishAction;
+use Creode\NovaPublishable\Nova\UnpublishAction;
 
 class Team extends Resource
 {
@@ -94,6 +96,16 @@ class Team extends Resource
      */
     public function actions(NovaRequest $request)
     {
-        return [];
+        return [
+            (new PublishAction)
+                ->confirmText('Are you sure you want to publish these items?')
+                ->confirmButtonText('Publish')
+                ->cancelButtonText("Don't Publish"),
+
+            (new UnpublishAction)
+                ->confirmText('Are you sure you want to unpublish these items?')
+                ->confirmButtonText('Unpublish')
+                ->cancelButtonText("Don't Unpublish")
+        ];
     }
 }
