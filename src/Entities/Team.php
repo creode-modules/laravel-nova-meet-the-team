@@ -5,6 +5,7 @@ namespace Creode\LaravelNovaMeetTheTeam\Entities;
 use Illuminate\Database\Eloquent\Model;
 use PawelMysior\Publishable\Publishable;
 use Spatie\Translatable\HasTranslations;
+use Creode\LaravelNovaMeetTheTeam\Entities\TeamMember;
 
 class Team extends Model
 {
