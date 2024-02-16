@@ -2,6 +2,8 @@
 
 namespace Creode\LaravelNovaMeetTheTeam;
 
+use Creode\LaravelNovaMeetTheTeam\Nova\Team;
+use Creode\LaravelNovaMeetTheTeam\Nova\TeamMember;
 use Laravel\Nova\Nova;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -18,9 +20,12 @@ class LaravelNovaMeetTheTeamServiceProvider extends PackageServiceProvider
 
     protected function registerResources(): void
     {
+        Team::$trafficCop = config('laravel-nova-meet-the-team.traffic_cop');
+        TeamMember::$trafficCop = config('laravel-nova-meet-the-team.traffic_cop');
+
         Nova::resources([
-            \Creode\LaravelNovaMeetTheTeam\Nova\TeamMember::class,
-            \Creode\LaravelNovaMeetTheTeam\Nova\Team::class,
+            TeamMember::class,
+            Team::class,
         ]);
     }
 
