@@ -53,5 +53,5 @@ The team members can be ordered by weight. This is a field that is added to the 
 You can order the team members by weight by using the following snippet:
 
 ```php
-$teams = $teamRepository->with('members')->orderBy('members.weight')->get();
+$teams = $teamRepository->with('members')->ordered()->get();
 ```
