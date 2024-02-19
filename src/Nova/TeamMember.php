@@ -16,6 +16,8 @@ use Laravel\Nova\Fields\Number;
 
 class TeamMember extends Resource
 {
+    use HasSortableRows;
+
     /**
      * The model the resource corresponds to.
      *
