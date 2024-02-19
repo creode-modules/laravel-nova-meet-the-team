@@ -11,8 +11,8 @@ use Creode\NovaPublishable\Published;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Creode\NovaPublishable\Nova\PublishAction;
 use Creode\NovaPublishable\Nova\UnpublishAction;
+use Outl1ne\NovaSortable\Traits\HasSortableRows;
 use Creode\LaravelNovaMeetTheTeam\Nova\Team as TeamResource;
-use Laravel\Nova\Fields\Number;
 
 class TeamMember extends Resource
 {
@@ -68,11 +68,6 @@ class TeamMember extends Resource
 
             BelongsTo::make('Team', 'team', TeamResource::class)
                 ->showCreateRelationButton(),
-
-            Number::make('Weight')
-                ->help(__('The order in which the team member is displayed. Lower numbers appear first.'))
-                ->sortable()
-                ->rules('nullable', 'integer', 'gte:0'),
         ];
     }
 
