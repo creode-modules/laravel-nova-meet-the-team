@@ -15,10 +15,11 @@
     "require": {
         "php": "^7.3|^8.0",
         "creode/laravel-repository": "^1.0",
+        "creode/nova-publishable": "^1.1",
         "illuminate/contracts": "^10.0",
         "laravel/nova": "^4.32",
-        "spatie/laravel-package-tools": "^1.16",
-        "creode/nova-publishable": "^1.1"
+        "outl1ne/nova-sortable": "^3.4",
+        "spatie/laravel-package-tools": "^1.16"
     },
     "autoload": {
         "psr-4": {

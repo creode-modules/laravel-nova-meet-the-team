@@ -5,15 +5,22 @@ namespace Creode\LaravelNovaMeetTheTeam\Entities;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use PawelMysior\Publishable\Publishable;
+use Spatie\EloquentSortable\SortableTrait;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class TeamMember extends Model
 {
-	use Publishable;
+	use Publishable, SortableTrait;
 
     protected $table = 'team_members';
 
     protected $fillable = [];
+
+    /** Set Sortable Options */
+    public $sortable = [
+        'order_column_name' => 'sort_order',
+        'sort_when_creating' => true,
+      ];
 
     /**
      * Functions that run when the model is booting.

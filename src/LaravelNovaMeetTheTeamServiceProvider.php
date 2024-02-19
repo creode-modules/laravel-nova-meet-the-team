@@ -43,6 +43,7 @@ class LaravelNovaMeetTheTeamServiceProvider extends PackageServiceProvider
                     '2024_02_01_123306_add_published_field_to_team_members',
                     '2024_02_01_124805_add_published_at_field_to_teams',
                     '2024_02_16_165501_add_weight_field',
+                    '2024_02_19_152556_rename_weight_field',
                 ]
             )
             ->runsMigrations();
