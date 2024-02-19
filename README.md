@@ -46,3 +46,12 @@ use Creode\LaravelNovaMeetTheTeam\Repositories\TeamMemberRepository;
 ```
 
 These repositories as based on the [Laravel Repository](https://github.com/creode-modules/laravel-repository) package.
+
+### Ordering by Weight
+The team members can be ordered by weight. This is a field that is added to the team members table.
+
+You can order the team members by weight by using the following snippet:
+
+```php
+$teams = $teamRepository->with('members')->orderBy('members.weight')->get();
+```
