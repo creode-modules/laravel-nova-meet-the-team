@@ -26,6 +26,26 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Team Member Resource
+    |--------------------------------------------------------------------------
+    |
+    | The Nova resource to be used when interacting with a team member.
+    |
+    */
+    'team_member_resource' => \Creode\LaravelNovaMeetTheTeam\Nova\TeamMember::class,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Team Resource
+    |--------------------------------------------------------------------------
+    |
+    | The Nova resource to be used when interacting with a team.
+    |
+    */
+    'team_resource' => \Creode\LaravelNovaMeetTheTeam\Nova\Team::class,
+
+    /*
+    |--------------------------------------------------------------------------
     | Image Disk
     |--------------------------------------------------------------------------
     |

@@ -20,12 +20,12 @@ class LaravelNovaMeetTheTeamServiceProvider extends PackageServiceProvider
 
     protected function registerResources(): void
     {
-        Team::$trafficCop = config('laravel-nova-meet-the-team.traffic_cop');
-        TeamMember::$trafficCop = config('laravel-nova-meet-the-team.traffic_cop');
+        Team::$trafficCop = config('nova-meet-the-team.traffic_cop');
+        TeamMember::$trafficCop = config('nova-meet-the-team.traffic_cop');
 
         Nova::resources([
-            TeamMember::class,
-            Team::class,
+            config('nova-meet-the-team.team_member_resource', TeamMember::class),
+            config('nova-meet-the-team.team_resource', Team::class),
         ]);
     }
 
